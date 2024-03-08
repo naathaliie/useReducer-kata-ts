@@ -1,4 +1,4 @@
-/* /* Counter-komponenten ska ha en p-tagg (eller annan tagg) 
+/* Counter-komponenten ska ha en p-tagg (eller annan tagg) 
 för att visa siffran vi räknar upp/ner. Två knappar för att 
 räkna upp och ner. All logik i reducer-funktionen och vi 
 använder enbart userReducer istf useState.
