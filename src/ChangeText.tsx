@@ -38,7 +38,7 @@ type TheText = {
 const ChangeText = () => {
   const [state, dispatch] = useReducer(textReducer, { text: "Ändra mig" });
   const inputRef = useRef<HTMLInputElement>(null);
-  const [inputWord, setInputWord] = useState("tom");
+  const [inputWord, setInputWord] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputWord(e.target.value);
@@ -50,7 +50,7 @@ const ChangeText = () => {
 
   return (
     <div className="changeTextDiv">
-      <h3>Change Text</h3>
+      <h3>UseRef-Kata 1: Change Text</h3>
       <div>
         <input
           ref={inputRef}
