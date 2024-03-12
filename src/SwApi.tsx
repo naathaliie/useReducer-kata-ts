@@ -14,8 +14,12 @@ const SwApi = () => {
 
     const fetchAPI = async () => {
       const response = await fetch(apiURL);
-      const data = await response.json();
-      if (!ignore) {
+
+      if (!response.ok) {
+        throw Error("Failed to load data");
+      } else {
+        const data = await response.json();
+
         setCharacter({
           name: data.results[0].name,
           height: data.results[0].height,
@@ -24,12 +28,9 @@ const SwApi = () => {
       }
     };
 
-    let ignore = false;
     fetchAPI();
 
-    return () => {
-      ignore = true;
-    };
+    return () => {};
   }, []);
 
   return (

@@ -126,3 +126,48 @@ button:hover{
     flex-direction: column;
     gap: 0.5rem;
 }
+
+.colorBoxDiv{
+    height: auto;
+    width: 25rem;
+    border: solid pink 2px;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .theColorBox{
+        width: 3rem;
+        height: 3rem;
+        border: solid grey 1px;
+    }
+}
+
+.colorBoxSecoundDiv{
+    height: auto;
+    width: 25rem;
+    border: solid hotpink 2px;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .theColorDiv{
+        width: 3rem;
+        height: 3rem;
+        border: solid grey 1px;
+    }
+}
+
+.starWarsAgainDiv{
+    height: auto;
+    width: 25rem;
+    border: solid rgb(8, 8, 8) 2px;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
