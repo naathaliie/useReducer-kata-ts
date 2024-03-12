@@ -9,7 +9,7 @@ type State = {
   count: number;
 };
 
-//Typar upp Atate
+//Typar upp Action
 type Action = {
   type: string;
   payload?: number;
@@ -35,6 +35,8 @@ const Addition = () => {
   const input1Ref = useRef<HTMLInputElement>(null);
   const input2Ref = useRef<HTMLInputElement>(null);
 
+  /* Vid klick samlas inputRef värdena in och parsas om till datatypen numer.
+  Därefter anropas dispatch-funktionen som får parametrarna type och payload (i payload adderas tal 1 och 2) */
   const handleOnClick = () => {
     const value1 = Number(input1Ref.current?.value);
     const value2 = Number(input2Ref.current?.value);
