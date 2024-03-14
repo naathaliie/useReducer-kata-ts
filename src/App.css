@@ -105,17 +105,6 @@ button:hover{
         
 }
 
-.swApiDiv{
-    height: auto;
-    width: 25rem;
-    border: solid rgb(8, 8, 8) 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-}
-
 .additionDiv{
     height: auto;
     width: 25rem;
@@ -161,13 +150,3 @@ button:hover{
     }
 }
 
-.starWarsAgainDiv{
-    height: auto;
-    width: 25rem;
-    border: solid rgb(8, 8, 8) 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-}

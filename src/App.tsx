@@ -5,14 +5,11 @@ import ColorBox from "./ColorBox";
 import ColorBoxSecound from "./ColorBoxSecound";
 import Counter from "./Counter";
 import SecondCounter from "./SecondCounter";
-import StarWarsAgain from "./StarWarsAgain";
-import SwApi from "./SwApi";
 import ThirdCounter from "./ThirdCounter";
 
 function App() {
   return (
     <>
-      <StarWarsAgain />
       <ColorBoxSecound />
       <ColorBox />
       <Addition />
@@ -20,7 +17,6 @@ function App() {
       <ThirdCounter />
       <Counter />
       <SecondCounter />
-      <SwApi />
     </>
   );
 }

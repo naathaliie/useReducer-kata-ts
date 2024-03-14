@@ -21,7 +21,7 @@ type State = {
 };
 type Action = {
   type: string;
-  payload?: number;
+  payload: number;
 };
 
 const ACTION = {
@@ -30,7 +30,7 @@ const ACTION = {
   RESET: "reset",
 };
 
-const countReducer = (state: State, { type, payload }: Action) => {
+const countReducer = (state: State, { type, payload = 0 }: Action) => {
   switch (type) {
     case ACTION.ADD:
       return { count: state.count + 1 };
@@ -54,7 +54,7 @@ const ThirdCounter = () => {
       <div>
         <button
           onClick={() => {
-            dispatch({ type: ACTION.ADD });
+            dispatch({ type: ACTION.ADD, payload: 0 });
           }}
         >
           +
@@ -68,7 +68,7 @@ const ThirdCounter = () => {
       <div>
         <button
           onClick={() => {
-            dispatch({ type: ACTION.REMOVE });
+            dispatch({ type: ACTION.REMOVE, payload: 0 });
           }}
         >
           -
@@ -77,7 +77,7 @@ const ThirdCounter = () => {
       <div>
         <button
           onClick={() => {
-            dispatch({ type: ACTION.RESET });
+            dispatch({ type: ACTION.RESET, payload: 0 });
           }}
         >
           Nollställ

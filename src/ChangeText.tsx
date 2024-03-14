@@ -14,7 +14,7 @@ type State = {
 //typar upp vad action får vara
 type Action = {
   type: string;
-  payload?: string;
+  payload: string;
 };
 //Vilka actions man skall kunna utföra
 const ACTION = {
@@ -43,9 +43,15 @@ const ChangeText = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputWord(e.target.value);
   };
+
   const handleOnClick = () => {
     setInputWord("");
     inputRef.current?.focus();
+
+    dispatch({
+      type: ACTION.CHANGE_TEXT,
+      payload: inputRef.current?.value || "",
+    });
   };
 
   return (
@@ -60,17 +66,7 @@ const ChangeText = () => {
         />
       </div>
       <div>
-        <button
-          onClick={() => {
-            dispatch({
-              type: ACTION.CHANGE_TEXT,
-              payload: inputRef.current?.value,
-            });
-            handleOnClick();
-          }}
-        >
-          Klicka mig
-        </button>
+        <button onClick={handleOnClick}>Klicka mig</button>
       </div>
       <div>
         <p>Text: {state.text}</p>
