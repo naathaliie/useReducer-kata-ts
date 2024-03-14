@@ -17,9 +17,22 @@ En till knapp Double som dubblerar räknarens siffra (avrundat uppåt)
 *Lägg till ett inputfält där man ska kunna skriva en siffra och lägg 
 till en knapp Add som lägger till siffran till count. Hint: payload
 **Lägg till en knapp Remove som tar bort siffran i inputfältet från vår räknare
-***Bygg en robust komponent där vi inte har några röda squiggly lines eller får error.*/
+***Bygg en robust komponent där vi inte har några röda squiggly lines eller får error.
 
-import { useReducer, useRef, useState } from "react";
+***EXTRA UTMANING***
+Bakgrundsfärg
+Lägg till så att bakgrundsfärgern ändras utifrån följande:
+
+När siffran är negativ så ska bakgrundsfärgen vara orange
+När siffran är positiv så ljusgrön
+När siffran är udda så ljusblå
+När siffran är jämn så rosa
+Primtal ger lila
+Kom ihåg att om bakgrundsfärgen är mörk behöver textfärgen vara ljus.*/
+
+import { useEffect, useReducer, useRef, useState } from "react";
+import isPrim from "./functions/isPrim";
+
 //Create a type alias for the state
 type State = {
   count: number;
@@ -78,6 +91,34 @@ const NEWCounter = () => {
   const [state, dispatch] = useReducer(counterReducer, { count: 0 });
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputText, setInputText] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("white");
+
+  //Backgrundsfärg skall baseras på state
+  useEffect(() => {
+    switch (true) {
+      case isPrim(state.count):
+        return setBackgroundColor("purple");
+      case state.count < 0:
+        return setBackgroundColor("orange");
+      case state.count > 0:
+        return setBackgroundColor("lightgreen");
+      //odd
+      case state.count % 2 !== 0:
+        return setBackgroundColor("lightblue");
+      //even
+      case state.count % 2 === 0:
+        return setBackgroundColor("pink");
+      //isPrim is a function created elsewhere
+
+      default:
+        break;
+    }
+
+    let ignore = false;
+    return () => {
+      ignore = true;
+    };
+  }, [state]);
 
   /*****HandleOnClick*****/
   const handleOnClick = () => {
@@ -90,7 +131,7 @@ const NEWCounter = () => {
   };
 
   return (
-    <div className="nEWCounterDiv">
+    <div className="nEWCounterDiv" style={{ backgroundColor: backgroundColor }}>
       <h3>NEWCounter</h3>
       <div>
         <button
