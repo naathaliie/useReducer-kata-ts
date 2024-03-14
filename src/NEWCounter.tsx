@@ -206,6 +206,16 @@ const NEWCounter = () => {
           reset
         </button>
       </div>
+      <section className="colorInfoSect">
+        <ul>
+          <li className="whiteLi">Default värde</li>
+          <li className="orangeLi">Negativt tal</li>
+          <li className="lightGreenLi">Positivt tal</li>
+          <li className="lightBlueLi">Udda tal</li>
+          <li className="pinkLi">Jämt tal</li>
+          <li className="purpleLi">Primtal</li>
+        </ul>
+      </section>
     </div>
   );
 };

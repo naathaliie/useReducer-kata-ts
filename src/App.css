@@ -1,162 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
 
+body {
+  background-color: rgba(240, 217, 221, 0.374);
+}
 
-  body{
-    background-color: rgba(240, 217, 221, 0.374);
+.counterDiv {
+  height: auto;
+  width: 25rem;
+  border: solid hotpink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.secounCounterDiv {
+  height: auto;
+  width: 25rem;
+  border: solid pink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .counterP {
+    border: solid rgb(199, 52, 199) 3px;
+    height: auto;
+    width: 5rem;
+  }
+}
+
+.changeTextDiv {
+  height: auto;
+  width: 25rem;
+  border: solid pink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .theBtn {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 5rem;
+      margin-top: 0.5rem;
+    }
   }
 
-.counterDiv{
-    height: auto;
-    width: 25rem;
-    border: solid hotpink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.secounCounterDiv{
-    height: auto;
-    width: 25rem;
-    border: solid pink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .counterP{
-        border: solid rgb(199, 52, 199) 3px;
-        height: auto;
-        width: 5rem;
-    }
-}
-
-.changeTextDiv{
-    height: auto;
-    width: 25rem;
-    border: solid pink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .theBtn{
-        display: flex;
-        flex-direction: column;
-
-        button{
-            width: 5rem;
-            margin-top: 0.5rem;
-        }
-    }
-
-    p{
-        border: solid pink 10px;
-        width: auto; /* Sätt till auto för att tillåta att bredden anpassas */
-        max-width: none; /* Tar bort maximal bredd */
-        display: inline-block; /* Gör att p-taggen beter sig som ett inlinjelement */
-        padding: 0.2rem;
-        font-weight: bold;
-    }
-}
-
-.thirdCounterDiv{
-    font-family: "Rubik Bubbles", system-ui;
-    color: #cf68eeb7;
-    height: auto;
-    width: 25rem;
-    border: solid hotpink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; 
-
-    .spanText{
-        font-family: "Rubik Bubbles", system-ui;
-        font-size: 40px;
-        color: #f996ec;
-    }
-}
-
-button{
-    width: auto;
-    height: 1.5rem;
-    margin: 1%;
-    border: solid;
-
-    background-color: #fbbbf3;
-    border: solid 2px #f996ec;
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px#f996ecc4;
-    
-    
-    color: white;
+  p {
+    border: solid pink 10px;
+    width: auto; /* Sätt till auto för att tillåta att bredden anpassas */
+    max-width: none; /* Tar bort maximal bredd */
+    display: inline-block; /* Gör att p-taggen beter sig som ett inlinjelement */
+    padding: 0.2rem;
     font-weight: bold;
-
-   
-} 
-
-button:hover{
-        background-color: hotpink;
-        
+  }
 }
 
-.additionDiv{
-    height: auto;
-    width: 25rem;
-    border: solid hotpink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.thirdCounterDiv {
+  font-family: "Rubik Bubbles", system-ui;
+  color: #cf68eeb7;
+  height: auto;
+  width: 25rem;
+  border: solid hotpink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .spanText {
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: 40px;
+    color: #f996ec;
+  }
 }
 
-.colorBoxDiv{
-    height: auto;
-    width: 25rem;
-    border: solid pink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+button {
+  width: auto;
+  height: 1.5rem;
+  margin: 1%;
+  border: solid;
 
-    .theColorBox{
-        width: 3rem;
-        height: 3rem;
-        border: solid grey 1px;
+  background-color: #fbbbf3;
+  border: solid 2px #f996ec;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px#f996ecc4;
+
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: hotpink;
+}
+
+.additionDiv {
+  height: auto;
+  width: 25rem;
+  border: solid hotpink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colorBoxDiv {
+  height: auto;
+  width: 25rem;
+  border: solid pink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .theColorBox {
+    width: 3rem;
+    height: 3rem;
+    border: solid grey 1px;
+  }
+}
+
+.colorBoxSecoundDiv {
+  height: auto;
+  width: 25rem;
+  border: solid hotpink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .theColorDiv {
+    width: 3rem;
+    height: 3rem;
+    border: solid grey 1px;
+  }
+}
+
+.nEWCounterDiv {
+  height: auto;
+  width: 35rem;
+  border: solid pink 2px;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .colorInfoSect {
+    position: relative;
+    top: -13rem;
+    left: 25rem;
+    background-color: rgb(177, 154, 154);
+    width: 8rem;
+    padding-right: 1rem;
+
+    .whiteLi {
+      color: white;
     }
-}
 
-.colorBoxSecoundDiv{
-    height: auto;
-    width: 25rem;
-    border: solid hotpink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .theColorDiv{
-        width: 3rem;
-        height: 3rem;
-        border: solid grey 1px;
+    .orangeLi {
+      color: orange;
     }
-}
+    
+    .lightGreenLi {
+    color: lightgreen;
+  }
 
-.nEWCounterDiv{
-    height: auto;
-    width: 25rem;
-    border: solid pink 2px;
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .lightBlueLi{
+    color: lightblue;
+  }
+  .pinkLi{
+    color: pink;
+  }
+  .purpleLi{
+    color: purple;
+  }
+  }
 }
