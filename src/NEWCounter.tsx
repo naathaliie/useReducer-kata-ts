@@ -49,38 +49,26 @@ const ACTIONS = {
   ADD: "add",
   REMOVE: "remove",
   RESET: "reset",
-  ADD_TEN: "addTen",
-  REMOVE_TEN: "removeTen",
   MINUS_HALF: "minusHalf",
   PLUS_HALF: "plusHalf",
-  ADD_PAYLOAD: "addPayload",
 };
 
 const counterReducer = (state: State, { type, payload = 0 }: Action) => {
   switch (type) {
     case ACTIONS.ADD:
-      return { count: state.count + 1 };
+      return { count: state.count + payload };
 
     case ACTIONS.REMOVE:
-      return { count: state.count - 1 };
+      return { count: state.count - payload };
 
     case ACTIONS.RESET:
       return { count: 0 };
 
-    case ACTIONS.ADD_TEN:
-      return { count: state.count + 10 };
-
-    case ACTIONS.REMOVE_TEN:
-      return { count: state.count - 10 };
-
     case ACTIONS.MINUS_HALF:
-      return { count: Math.ceil(state.count / 2) };
+      return { count: Math.ceil(state.count / 2) }; // In this case you could also have used Math.round()
 
     case ACTIONS.PLUS_HALF:
       return { count: Math.ceil(state.count * 2) };
-
-    case ACTIONS.ADD_PAYLOAD:
-      return { count: state.count + payload };
 
     default:
       return state;
@@ -123,7 +111,7 @@ const NEWCounter = () => {
   /*****HandleOnClick*****/
   const handleOnClick = () => {
     const numberToAdd = Number(inputRef.current?.value);
-    dispatch({ type: ACTIONS.ADD_PAYLOAD, payload: numberToAdd });
+    dispatch({ type: ACTIONS.ADD, payload: numberToAdd });
   };
   /*****HandleChange*****/
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -136,35 +124,35 @@ const NEWCounter = () => {
       <div>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.ADD });
+            dispatch({ type: ACTIONS.ADD, payload: 1 });
           }}
         >
           +
         </button>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.REMOVE });
+            dispatch({ type: ACTIONS.REMOVE, payload: 1 });
           }}
         >
           -
         </button>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.RESET });
+            dispatch({ type: ACTIONS.RESET, payload: 0 });
           }}
         >
           reset
         </button>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.ADD_TEN });
+            dispatch({ type: ACTIONS.ADD, payload: 10 });
           }}
         >
           +10
         </button>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.REMOVE_TEN });
+            dispatch({ type: ACTIONS.REMOVE, payload: 10 });
           }}
         >
           -10
