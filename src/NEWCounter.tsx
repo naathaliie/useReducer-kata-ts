@@ -41,7 +41,7 @@ type State = {
 //Create a type alias for the Action
 type Action = {
   type: string;
-  payload?: number;
+  payload: number;
 };
 
 //Our actions options
@@ -53,7 +53,7 @@ const ACTIONS = {
   PLUS_HALF: "plusHalf",
 };
 
-const counterReducer = (state: State, { type, payload = 0 }: Action) => {
+const counterReducer = (state: State, { type, payload }: Action) => {
   switch (type) {
     case ACTIONS.ADD:
       return { count: state.count + payload };
