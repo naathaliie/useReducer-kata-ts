@@ -39,10 +39,12 @@ type State = {
 };
 
 //Create a type alias for the Action
-type Action = {
-  type: string;
-  payload: number;
-};
+type Action =
+  | {
+      type: typeof ACTIONS.ADD;
+      payload: number;
+    }
+  | { type: typeof ACTIONS.REMOVE };
 
 //Our actions options
 const ACTIONS = {
@@ -53,8 +55,8 @@ const ACTIONS = {
   PLUS_HALF: "plusHalf",
 };
 
-const counterReducer = (state: State, { type, payload }: Action) => {
-  switch (type) {
+const counterReducer = (state: State, action: Action) => {
+  switch (action.type) {
     case ACTIONS.ADD:
       return { count: state.count + payload };
 
@@ -138,7 +140,7 @@ const NEWCounter = () => {
         </button>
         <button
           onClick={() => {
-            dispatch({ type: ACTIONS.RESET, payload: 0 });
+            dispatch({ type: ACTIONS.RESET });
           }}
         >
           reset
